@@ -1,0 +1,35 @@
+<main>
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">{{title}}</h1>
+        <p class="lead text-muted">Peliculas del genero de {{title}}</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+  <div class="row my-4">
+{{#each genero}}
+ <div class="col-md-3">
+    <div class="card my-4" style="width: 18rem; {{#if this.estado}} {{else}} background-color: lightgray; {{/if}}">
+      <div class="card-body">
+        <h5 class="card-title">{{this.titulo}}</h5>
+         <p class="card-text">{{this.description}}</p>
+      </div>
+      <div>
+      <small class="mx-1">{{this.genero}}</small> 
+       <small class="float-end mx-1">{{#if this.estado}} Activado {{else}} Desactivado {{/if}}</small> 
+      </div>
+    </div>
+</div>
+ {{/each}}
+</div>  
+
+</div>
+  </div>
+
+</main>

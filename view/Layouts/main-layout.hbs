@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/assets/css/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+
+  <header style="margin-bottom: 40px;">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+          aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item" style="margin-right: 100px;">
+              <a class="nav-link {{#if homeActive}} active {{/if}}" aria-current="page" href="/">Home</a>
+            </li>
+            &nbsp;
+            &nbsp;
+            <li class="nav-item">
+              <a class="nav-link {{#if accionActive}} active {{/if}}" href="/accion">Accion</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{#if terrorActive}} active {{/if}}" href="/terror">Terror</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{#if comediaActive}} active {{/if}}" href="/comedia">Comedia</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{#if suspensoActive}} active {{/if}}" href="/suspenso">Suspenso</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link {{#if docuActive}} active {{/if}}" href="/documentales">Documentales</a>
+
+            </li>
+          </ul>
+
+        </div>
+        <div class="dropdown fload-end">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Admin Options
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+             <li>
+              <a class="dropdown-item" href="/admin/Add-movie">Añadir pelicula</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="/admin/Movies">Admin Movies</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+</head>
+
+<body>
+  {{{body}}}
+  <script src="/assets/js/bootstrap/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<main>
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Peliculas</h1>
+       
+      </div>
+    </div>
+  </section>
+
+  <div class="album py-5 bg-light">
+    <div class="container">
+
+      <div class="row my-5">
+{{#each mov}}
+ <div class="col-md-3">
+    <div class="card my-4" style="width: 18rem; {{#if this.estado}} {{else}} background-color: lightgray; {{/if}}">
+      <div class="card-body">
+        <h5 class="card-title">{{this.titulo}}</h5>
+         <p class="card-text">{{this.description}}</p>
+      </div>
+      <div class="d-flex  align-items-center mx-3">
+                        <div class="btn-group">
+                          <form action="/admin/delete-movie" method="post">
+                          <input type="hidden" name="movieId" value="{{this.id}}"/>
+                  <button class="btn btn-primary">Delete</button>
+                 </form>
+                  <button type="button" class="rounded-1 btn btn-primary mx-2"><a class="text-light" href="edit-Movies/{{this.id}}?edit=true" style="text-decoration: solid;">Edit</a> </button>
+                </div>
+                </div>
+      <div>
+      <small class="mx-1">{{this.genero}}</small> 
+       <small class="float-end mx-1">{{#if this.estado}} Activado {{else}} Desactivado {{/if}}</small> 
+      </div>
+    </div>
+</div>
+ {{/each}}
+
+
+
+    
+
+</div>
+  </div>
+  </div>
+</main>
+

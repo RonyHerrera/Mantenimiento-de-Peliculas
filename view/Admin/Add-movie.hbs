@@ -1,0 +1,74 @@
+<main>
+    <div class="container mt-main">
+        <div class="row">
+            <div class="col-md-8 offset-2 mt-5">
+
+                <div class="card">
+                    <div class="card-header bg-dark text-light">
+                        <h5 class="text-center">{{#if editMode}} Editar Pelicula {{else}} Agregar nueva pelicula {{/if}}
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST"
+                            action="{{#if editMode}}/Admin/edit-Movies {{else}}/Admin/Add-movie {{/if}}">
+
+                            <div class="mb-3  mt-2">
+                                {{#if editMode}}
+
+                                <label style="margin-bottom: 12px;">Id: {{movie.id}}</label>
+
+
+                                {{/if}}
+                                <input placeholder="Nombre de la Pelicula" id="titulo" class="form-control" type="text"
+                                    aria-label="default input example" name="titulo"
+                                    value="{{#if editMode}} {{movie.titulo}} {{/if}}" />
+                            </div>
+                            <div class="mb-3">
+                                <textarea placeholder="Descripcion" name="description" id="description" cols="auto"
+                                    rows="5">{{#if editMode}} {{movie.description}} {{/if}}</textarea>
+                            </div>
+
+                            <select name="genero" class="form-select" aria-label="Default select example"
+                                aria-valuemax="">
+                                <option selected>{{#if editMode}}{{movie.genero}}{{else}}Selecciona el Genero{{/if}}
+                                </option>
+                                <option value="Accion">Accion</option>
+                                <option value="Terror">Terror</option>
+                                <option value="Comedia">Comedia</option>
+                                <option value="Suspenso">Suspenso</option>
+                                <option value="Documentales">Documentales</option>
+                            </select>
+
+                            {{#if editMode}}
+                            <div class="form-check form-switch mt-3">
+                                <input class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckChecked">
+
+                                <input name="estado" class="form-check-input" type="checkbox" role="switch"
+                                    id="flexSwitchCheckChecked" checked>
+                                <label class="form-check-label" for="flexSwitchCheckChecked">Estado</label>
+                            </div>
+                            {{else}}
+
+                            {{/if}}
+
+
+                            {{#if editMode}}
+
+                            <input type="hidden" name="movieId" value="{{movie.id}}">
+
+                            {{/if}}
+
+
+                            <div>
+                                <div class="mt-3">
+                                    <button class="btn btn-success me-2 float-end"> {{#if editMode}} Upload {{else}} add
+                                        {{/if}}</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
